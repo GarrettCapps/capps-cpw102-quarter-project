@@ -33,3 +33,4 @@ The application will not handle character creation for other TTRPG systems, hand
 ### The product could
 - Feature a GUI
 - Output in the form of an editable PDF
+- Support creating a random character
