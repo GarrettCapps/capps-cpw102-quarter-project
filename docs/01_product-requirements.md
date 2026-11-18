@@ -11,7 +11,6 @@ Rather than relying on the V&V source book to follow the process, a Character Cr
 
 ## Scope
 
-[Which users, use cases, and features will this app cover?]
 The application will prompt the user to make the required character creation decisions and record those decisions. Then, once the character creation process has finished, the application will output the created character.
 
 ## Out of Scope
