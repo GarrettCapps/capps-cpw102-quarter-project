@@ -10,6 +10,14 @@
 
 A friend should be able to read this section and, at a glance, understand how the application works. ]
 
+The Character Creator will handle the necessary choices to make a V&V Character. In order, the user will:
+    Choose a species and (if applicable) Subspecies
+    Distribute points into their S.P.E.C.I.A.L. Stats
+    Select a background
+    Select their Tagged Skill(s)
+The application will track these decisions and display them to the user as the character creation process goes along.
+Once the character creation process has been finished, the application will output the created character to the user.
+    
 ## System Diagrams
 
 [This document must include one or more of the following:
@@ -24,10 +32,12 @@ A friend should be able to read this section and, at a glance, understand how th
 ### Inputs
 
 [What information will you take from the user? How will you take it (terminal, UI, file, ext)? What data types will you need to store user-entered information? ]
+For baseline functionality, the Character Creator will take input from the user through the console. Time permitting, a GUI will be developed afterwards. Most data, whether entered as a string or integer (or mouse click), will be stored internally as integers, enabling the use of lists for handling species, subspecies, and background selection and display, as well as simplifying the modification of S.P.E.C.I.A.L. Stats.
 
 #### Handling bad inputs
 
-[How will your app handle bad user inputs?] 
+[How will your app handle bad user inputs?]
+Input that is technically valid but formatted poorly can be handled with tools such as .strip() and .lower(). Invalid input can be handled with loops, rejecting invalid input and prompting the user again until valid input is given. Should a GUI be properly implemented, preventing invalid input becomes more about ensuring the user goes through the character creation process in the right order, which can be done with booleans and if statements checking for prerequisite steps being completed.
 
 ### Logic
 
@@ -35,7 +45,7 @@ A friend should be able to read this section and, at a glance, understand how th
 
 ### Functions
 
-[How will you break your flow of logic up into functions? Write some psuedo code for your `main()` function to show how your app will coordinate its duties.]
+[How will you break your flow of logic up into functions? Write some pseudo code for your `main()` function to show how your app will coordinate its duties.]
 
 ``` python
 def main():
