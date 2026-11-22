@@ -39,12 +39,12 @@ Input that is technically valid but formatted poorly can be handled with tools s
 [How will you break your flow of logic up into functions? Write some pseudo code for your `main()` function to show how your app will coordinate its duties.]
 
 ``` python
+import random
 # Initialize global variables for tracking character information like stats,
 # skills, species/subspecies and background
 # these are made global so that multiple functions can reference and modify them
-# rather than passing 20 variables between functions.
 
-# Stats start at and have a minimum of 1
+# Stats start at and have an absolute minimum of 1
 # And max out at 10
 strength = 1
 perception = 1
@@ -53,6 +53,7 @@ charisma = 1
 intelligence = 1
 agility = 1
 luck = 1
+SPECIAL_MAXIMUM = 10
 
 # Stat modifiers are derived from the formula of the Stat - 5
 strength_modifier = -4
@@ -119,36 +120,97 @@ special_points = 33
 tags_left = 1
 
 def main():
-    #input lists of species, subspecies, and backgrounds
+    # input lists of species/subspecies and backgrounds
+    # The user will select species and subspecies simultaneously
+    # As I am unsure how I would associate them with each other with the modular approach I've taken
     with open("species.txt", "r") as file:
         species_list = [line.strip() for line in file.readlines()]
-    with open("subspecies.txt", "r") as file:
-        subspecies_list = [line.strip() for line in file.readlines()]
     with open("backgrounds.txt", "r") as file:
         backgrounds_list = [line.strip() for line in file.readlines()]
-    #print some sort of header to the console
-    
+    # print some sort of header to the console
+    # likely modeled after Fallout terminals
+    # for the sake of aesthetics
+    print_header()
+    # Prompt user to select species
+    species = input_species_choice()
+    # Humans get more tagged skills and S.P.E.C.I.A.L. points
+    # Using the text value rather than the integer to prevent
+    # bugs if more species are added, shifting where Human is
+    # on the list
+    if species_list[species] = "Human":
+        special_points += 2
+        tags_left += 2
+    # The Worker subspecies of Synths (synthetic humans) get a choice on
+    # whether to tag Science or Barter.
+    if species_list[species] = "Gen. 2 Worker Synth":
+        worker_synth_tag_select()
+    if species_list[species] = "Gen. 3 Worker Synth":
+        worker_synth_tag_select()
+    # assign S.P.E.C.I.A.L. points to stats
+    distribute_special()
+    #Update special modifiers now that special has been distributed
+    calculate_special_modifiers()
+    # Prompt user to select a background
+    background = input_background_choice()
+    # Selecting a tagged skill/ tagged skills
+    distribute_skill_tags()
     #
-    species = input_species_choice
-    
-    
+    calculate_skills()
+
 def input_species_choice(species_list):
+    print([-1]: Random)
     for i in range(len(species_list)):
-            print(i + " " + species_list[i])
+            # Number each choice
+            print(f"[{i}]: {species_list[i]}")
     while True: #loop to ensure a valid input
         try:
             species_choice = int(input("Select a species: "))
-        except ValueError:
+        except ValueError: # prevent non-integer input
             print("Please enter an integer value!")
         else:
-            if species_choice >= len(species_list):
-                return species_choice
-        
+            #only return a valid value
+            if species_choice <= len(species_list):
+                # -1 indicates a random choice
+                if species_choice = -1:
+                    return random.randint(0, len(species_list))
+                else :
+                    return species_choice
+            else:
+                print("Please enter a valid choice!")
+#Background choice will operate functionally the same as species
+def input_background_choice():
+    #et cetera
 
-def adjust_special_stat(stat):
-    match stat:
-        case 1:
-            #Strength
+def distribute_special():
+    while special_points > 0:
+        print(f"Strength: {strength}")
+        print(f"Perception: {perception}")
+        print(f"Endurance: {endurance}")
+        print(f"Charisma: {charisma}")
+        print(f"Intelligence: {intelligence}")
+        print(f"Agility: {agility}")
+        print(f"Luck: {luck}")
+        print(f"S.P.E.C.I.A.L. Points remaining: {special_points}")
+        stat = input("Select a S.P.E.C.I.A.L. stat to modify: ")
+        stat = stat.strip().lower()
+        #verify input
+        match stat:
+            case strength:
+                # Ensure that the stat remains within its bounds
+                if strength + stat_modification >= strength_minimum
+                    if stat_modification < 0:
+                        strength += stat_modification
+                        special_points -= stat_modification
+                    if strength + stat_modification <= SPECIAL_MAXIMUM:
+                        strength += stat_modification
+                        strength -= stat_modification
+                    else:
+                        #adding too much
+                        
+                else:
+                    #subtracting too much
+                    strength = strength_minimum
+                    
             
             
 
