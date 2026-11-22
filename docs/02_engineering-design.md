@@ -39,6 +39,18 @@ Input that is technically valid but formatted poorly can be handled with tools s
 [How will you break your flow of logic up into functions? Write some pseudo code for your `main()` function to show how your app will coordinate its duties.]
 
 ``` python
+# Initialize global variables for tracking character information like stats,
+# skills, species/subspecies and background
+
+#Stats start at and have a minimum of 1
+#And max out at 10
+strength = 1
+perception = 1
+# etc.
+
+# Skills range from 0 to 100
+# 
+
 def main():
     """
     function calls go below here
