@@ -41,23 +41,122 @@ Input that is technically valid but formatted poorly can be handled with tools s
 ``` python
 # Initialize global variables for tracking character information like stats,
 # skills, species/subspecies and background
+# these are made global so that multiple functions can reference and modify them
+# rather than passing 20 variables between functions.
 
-#Stats start at and have a minimum of 1
-#And max out at 10
+# Stats start at and have a minimum of 1
+# And max out at 10
 strength = 1
 perception = 1
+endurance = 1
+charisma = 1
+intelligence = 1
+agility = 1
+luck = 1
+
+# Stat modifiers are derived from the formula of the Stat - 5
+strength_modifier = -4
+perception_modifier = -4
+#etc.
+
+# Tagged stats receive a bonus to saving throws, and need to be communicated to the user
+strength_tagged = False
+perception_tagged = False
+#etc.
+
+# Species give Stat bonuses which can not be removed
+# effectively raising the stat floor above 1. These variables track that
+strength_minimum = 1
+perception_minimum = 1
+#etc.
+
+# Skills range from 0 to 100 and, at character creation,
+# are derives from their related S.P.E.C.I.A.L. stats
+
+#Strength skills
+melee = 0
+#perception skills
+energy = 0
+explosives = 0
+lockpick = 0
+#endurance skills
+big_guns = 0
+survival = 0
+unarmed = 0
+#charisma skills
+barter = 0
+speech = 0
+#intelligence skills
+medicine = 100
+repair = 100
+science = 100
+#agility skills
+small_guns = 0
+sneak = 0
+
+# Tagged skills receive a starting bonus of +15
+# and have other minor gameplay implications
+# and must be communicated to the user
+melee_tagged = False
+energy_tagged = False
+explosives_tagged = False
+#etc.
+
+# (Most) Species give tagged skills. Tagged skills given by species can not be untagged
+# and so their status being locked needs to be tracked
+melee_locked = False
+energy_locked = False
+explosives_locked = False
 # etc.
 
-# Skills range from 0 to 100
-# 
+# SPECIAL points are spent by the user to increase their S.P.E.C.I.A.L. stats.
+# Most species get 33 points. Humans get 35.
+# Track remaining points to distribute
+special_points = 33
+
+# All characters get to choose one free tag skill
+# except humans, which get three.
+tags_left = 1
 
 def main():
-    """
-    function calls go below here
-    """
-    pass
+    #input lists of species, subspecies, and backgrounds
+    with open("species.txt", "r") as file:
+        species_list = [line.strip() for line in file.readlines()]
+    with open("subspecies.txt", "r") as file:
+        subspecies_list = [line.strip() for line in file.readlines()]
+    with open("backgrounds.txt", "r") as file:
+        backgrounds_list = [line.strip() for line in file.readlines()]
+    #print some sort of header to the console
+    
+    #
+    species = input_species_choice
+    
+    
+def input_species_choice(species_list):
+    for i in range(len(species_list)):
+            print(i + " " + species_list[i])
+    while True: #loop to ensure a valid input
+        try:
+            species_choice = int(input("Select a species: "))
+        except ValueError:
+            print("Please enter an integer value!")
+        else:
+            if species_choice >= len(species_list):
+                return species_choice
+        
+
+def adjust_special_stat(stat):
+    match stat:
+        case 1:
+            #Strength
+            
+            
+
+def print_character_sheet()
+            
 
 main()
+
 ```
 
 ### Libraries
