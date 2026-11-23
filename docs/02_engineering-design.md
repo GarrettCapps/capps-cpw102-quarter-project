@@ -88,9 +88,9 @@ unarmed = 0
 barter = 0
 speech = 0
 #intelligence skills
-medicine = 100
-repair = 100
-science = 100
+medicine = 0
+repair = 0
+science = 0
 #agility skills
 small_guns = 0
 sneak = 0
@@ -193,7 +193,6 @@ def distribute_special():
         print(f"S.P.E.C.I.A.L. Points remaining: {special_points}")
         stat = input("Select a S.P.E.C.I.A.L. stat to modify: ")
         stat = stat.strip().lower()
-        #verify input
         match stat:
             case strength:
                 # Ensure that the stat remains within its bounds
@@ -205,11 +204,12 @@ def distribute_special():
                         strength += stat_modification
                         strength -= stat_modification
                     else:
-                        #adding too much
-                        
+                        #adding too much 
                 else:
                     #subtracting too much
                     strength = strength_minimum
+            case _:
+                print("Enter a valid stat!")
                     
             
             
