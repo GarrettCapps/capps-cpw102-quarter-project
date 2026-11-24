@@ -28,7 +28,9 @@ Input that is technically valid but formatted poorly can be handled with tools s
 
 ### Logic
 
-[At a high level, describe the logic you will need to apply. What Python tools will you use to capture that logic? For loops, while loops, exceptions?] 
+[At a high level, describe the logic you will need to apply. What Python tools will you use to capture that logic? For loops, while loops, exceptions?]
+
+A large portion of the character creation process is linear, meaning it will simply require the process be implemented in the right order. Distributing S.P.E.C.I.A.L. points and free Tag Skills will both require loops to accomplish.
 
 ### Functions
 
@@ -158,23 +160,49 @@ main()
 
 ### Libraries
 
-[How can you leverage external libraries to:
-
-- take advantage of functionality already written and tested by others?
-- improve the performance, user experience, or features in your application?
-
-All apps should leverage libraries. ]
+The V&V Character Creator will utilize the Random library to enable users to select a species and background at random, should they not want to or are unable to do so themselves
 
 ### Output
 
-[What exactly will you output to the user? Options could be:
-
-- printing a report to the terminal at the end of a program
-- repeatedly giving users updates on an iterative process
-- creating a file based on user-entered data
-
-If applicable, show an example output below:]
+The Character Creator will, for basic functionality, output the created character to the console after the character creation process has been finished.
 
 ```
+Species: Gen. 3 Synth Strider
+Background: Soldier
+[*] Strength: 5
+Strength Modifier: +0
+[*] Perception: 7
+Perception Modifier: +2
+[ ] Endurance: 7
+Endurance Modifier: +2
+[ ] Charisma: 5
+Charisma Modifier: +0
+[ ] Intelligence: 7
+Intelligence Modifier: +2
+[ ] Agility: 10
+Agility Modifier: +5
+[ ] Luck: 2
+Luck Modifier: -3
 
+[ ] Melee Weapons: 12
+[*] Energy Weapons: 33
+[ ] Explosives: 18
+[ ] Lockpick: 18
+[ ] Big Guns: 14
+[ ] Survival: 14
+[ ] Unarmed: 14
+[*] Barter: 27
+[ ] Speech: 12
+[ ] Medicine: 16
+[ ] Repair: 16
+[ ] Science: 16
+[ ] Small Guns: 22
+[*] Sneak: 37
+
+Hit Points: 10
+Hit Dice: 1d8
+Rad Resistance: 0%
+Speed: 30 ft.
+Inventory: Laser Rifle, Security Baton, Combat Armor, Army Fatigues, 3 Stimpaks, 1 Fusion Core, 150 Fusion Cells, 100 Caps
+Perks: Well Trained
 ```
