@@ -1,12 +1,12 @@
-# [Project name]
+# Vaults & Vertibirds Character Creator
 
 ## Project description
 
-Describe what your project does and who it helps.
+The Vaults & Vertibirds (V&V) Character Creator enables players of the V&V TTRPG system to create characters in a way that is easier, faster, and clearer than doing so manually.
 
 ## Author
 
-Add your name and, optionally, your GitHub username.
+Garrett Capps
 
 ## Environment setup
 
