@@ -76,24 +76,25 @@ perception_minimum = 1
 
 #Strength skills
 melee = 0
-#perception skills
+#Perception skills
 energy = 0
 explosives = 0
 lockpick = 0
-#endurance skills
+#Endurance skills
 big_guns = 0
 survival = 0
 unarmed = 0
-#charisma skills
+#Charisma skills
 barter = 0
 speech = 0
-#intelligence skills
+#Intelligence skills
 medicine = 0
 repair = 0
 science = 0
-#agility skills
+#Agility skills
 small_guns = 0
 sneak = 0
+#Luck has no skills
 
 # Tagged skills receive a starting bonus of +15
 # and have other minor gameplay implications
@@ -156,67 +157,7 @@ def main():
     distribute_skill_tags()
     #
     calculate_skills()
-
-def input_species_choice(species_list):
-    print([-1]: Random)
-    for i in range(len(species_list)):
-            # Number each choice
-            print(f"[{i}]: {species_list[i]}")
-    while True: #loop to ensure a valid input
-        try:
-            species_choice = int(input("Select a species: "))
-        except ValueError: # prevent non-integer input
-            print("Please enter an integer value!")
-        else:
-            #only return a valid value
-            if species_choice <= len(species_list):
-                # -1 indicates a random choice
-                if species_choice = -1:
-                    return random.randint(0, len(species_list))
-                else :
-                    return species_choice
-            else:
-                print("Please enter a valid choice!")
-#Background choice will operate functionally the same as species
-def input_background_choice():
-    #et cetera
-
-def distribute_special():
-    while special_points > 0:
-        print(f"Strength: {strength}")
-        print(f"Perception: {perception}")
-        print(f"Endurance: {endurance}")
-        print(f"Charisma: {charisma}")
-        print(f"Intelligence: {intelligence}")
-        print(f"Agility: {agility}")
-        print(f"Luck: {luck}")
-        print(f"S.P.E.C.I.A.L. Points remaining: {special_points}")
-        stat = input("Select a S.P.E.C.I.A.L. stat to modify: ")
-        stat = stat.strip().lower()
-        match stat:
-            case strength:
-                # Ensure that the stat remains within its bounds
-                if strength + stat_modification >= strength_minimum
-                    if stat_modification < 0:
-                        strength += stat_modification
-                        special_points -= stat_modification
-                    if strength + stat_modification <= SPECIAL_MAXIMUM:
-                        strength += stat_modification
-                        strength -= stat_modification
-                    else:
-                        #adding too much 
-                else:
-                    #subtracting too much
-                    strength = strength_minimum
-            case _:
-                print("Enter a valid stat!")
-                    
-            
-            
-
-def print_character_sheet()
-            
-
+    print_character_sheet()
 main()
 
 ```
