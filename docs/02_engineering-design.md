@@ -17,7 +17,6 @@ Once the character creation process has been finished, the application will outp
 
 ## Technical Details
 
-
 ### Inputs
 
 For baseline functionality, the Character Creator will take input from the user through the console. Time permitting, a GUI will be developed afterwards. Most data, whether entered as a string or integer (or mouse click), will be stored internally as integers, enabling the use of lists for handling species, subspecies, and background selection and display, as well as simplifying the modification of S.P.E.C.I.A.L. Stats.
@@ -27,8 +26,6 @@ For baseline functionality, the Character Creator will take input from the user 
 Input that is technically valid but formatted poorly can be handled with tools such as .strip() and .lower(). Invalid input can be handled with loops, rejecting invalid input and prompting the user again until valid input is given. Should a GUI be properly implemented, preventing invalid input becomes more about ensuring the user goes through the character creation process in the right order, which can be done with booleans and if statements checking for prerequisite steps being completed.
 
 ### Logic
-
-[At a high level, describe the logic you will need to apply. What Python tools will you use to capture that logic? For loops, while loops, exceptions?]
 
 A large portion of the character creation process is linear, meaning it will simply require the process be implemented in the right order. Distributing S.P.E.C.I.A.L. points and free Tag Skills will both require loops to accomplish.
 
