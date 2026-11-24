@@ -19,6 +19,8 @@ Once the character creation process has been finished, the application will outp
 - flowchart of logic for critical flows
 - mockups of any program-driven user interfaces, if applicable]
 
+  ![Program Flowchart](https://github.com/GarrettCapps/capps-cpw102-quarter-project/blob/planning/docs/V%26V%20Character%20Creator.drawio.png)
+
 ## Technical Details
 
 
