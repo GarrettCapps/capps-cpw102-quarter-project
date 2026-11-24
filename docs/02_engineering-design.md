@@ -11,15 +11,9 @@ The Character Creator will handle the necessary choices to make a V&V Character.
 The application will track these decisions and display them to the user as the character creation process goes along.
 Once the character creation process has been finished, the application will output the created character to the user.
     
-## System Diagrams
+## System Diagram
 
-[This document must include one or more of the following:
-
-- block diagram of your proposed functions and modules, including external libraries
-- flowchart of logic for critical flows
-- mockups of any program-driven user interfaces, if applicable]
-
-  ![Program Flowchart](https://github.com/GarrettCapps/capps-cpw102-quarter-project/blob/planning/docs/V%26V%20Character%20Creator.drawio.png)
+  ![V&V Character Creator Flowchart](https://github.com/GarrettCapps/capps-cpw102-quarter-project/blob/planning/docs/V%26V%20Character%20Creator.drawio.png)
 
 ## Technical Details
 
@@ -37,8 +31,6 @@ Input that is technically valid but formatted poorly can be handled with tools s
 [At a high level, describe the logic you will need to apply. What Python tools will you use to capture that logic? For loops, while loops, exceptions?] 
 
 ### Functions
-
-[How will you break your flow of logic up into functions? Write some pseudo code for your `main()` function to show how your app will coordinate its duties.]
 
 ``` python
 import random
